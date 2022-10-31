@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sniperModel.Community;
 import sniperModel.CommunityDirectory;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -284,6 +286,62 @@ public class CommunityUI extends javax.swing.JPanel {
 
     private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
         // TODO add your handling code here:
+        
+        //City Validation
+                if(Tcity.getText().isEmpty()) 
+                {
+                    JOptionPane.showMessageDialog(create, "City is required");
+                    return;
+                }
+                else 
+                {
+                    String nameRegex = "^[a-zA-Z\\s]*$";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(Tcity.getText());
+
+                    if(!nameMatcher.matches()){
+                        JOptionPane.showMessageDialog(create, "Please enter valid City");
+                        return;
+                    }
+                }
+                
+         //Community Validation
+                if(Tcom.getText().isEmpty()) 
+                {
+                    JOptionPane.showMessageDialog(create, "Community is required");
+                    return;
+                }
+                else 
+                {
+                    String nameRegex = "^[a-zA-Z\\s]*$";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(Tcom.getText());
+
+                    if(!nameMatcher.matches()){
+                        JOptionPane.showMessageDialog(create, "Please enter valid Community");
+                        return;
+                    }
+                }         
+        
+                
+            //House Validation
+                if(Th.getText().isEmpty()) 
+                {
+                    JOptionPane.showMessageDialog(create, "House Number is required");
+                    return;
+                }
+                else 
+                {
+                    String nameRegex = "^[1-9]\\d*(?:[ -]?(?:[a-zA-Z]+|[1-9]\\d*))?$";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(Th.getText());
+
+                    if(!nameMatcher.matches()){
+                        JOptionPane.showMessageDialog(create, "Please enter valid house number");
+                        return;
+                    }
+                }
+                
        city = Tcity.getText();
        com = Tcom.getText();
        hou = Th.getText();

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sniperModel.Doctor;
@@ -412,7 +414,109 @@ public class DoctorUI extends javax.swing.JPanel {
 
     private void createDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createDocActionPerformed
         // TODO add your handling code here:
-        
+                 //First name validation
+               if(fn.getText().isEmpty()) 
+               {
+                    JOptionPane.showMessageDialog(createDoc, "First name is required");
+                    return;
+                }else 
+               {
+                    String nameRegex = "^[a-zA-z]+([\\s][a-zA-Z]+)*$";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(fn.getText());
+
+                    if(!nameMatcher.matches())
+                    {
+                        JOptionPane.showMessageDialog(createDoc, "Please enter valid first name");
+                        return;
+                    }
+               }
+               
+             //last name validation
+               if(ln.getText().isEmpty()) 
+               {
+                    JOptionPane.showMessageDialog(createDoc, "Last name is required");
+                    return;
+                }else 
+               {
+                    String nameRegex = "^[a-zA-z]+([\\s][a-zA-Z]+)*$";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(ln.getText());
+
+                    if(!nameMatcher.matches())
+                    {
+                        JOptionPane.showMessageDialog(createDoc, "Please enter valid last name");
+                        return;
+                    }
+               } 
+               
+               //Email Validation
+               if(mail.getText().isEmpty()) 
+               {
+                    JOptionPane.showMessageDialog(createDoc, "Email is required");
+                    return;
+                }else 
+               {
+                    String nameRegex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(mail.getText());
+
+                    if(!nameMatcher.matches())
+                    {
+                        JOptionPane.showMessageDialog(createDoc, "Please enter valid Email");
+                        return;
+                    }
+               }                
+
+             //ID Validation
+               if(did.getText().isEmpty()) 
+               {
+                    JOptionPane.showMessageDialog(createDoc, "ID is required");
+                    return;
+                }
+               else 
+               {
+                    String nameRegex = "^[1-9]\\d*$";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(did.getText());
+
+                    if(!nameMatcher.matches())
+                    {
+                        JOptionPane.showMessageDialog(createDoc, "Please enter valid ID");
+                        return;
+                    }
+               } 
+               if(this.dDir.ifIdExists(id))
+               {
+                    JOptionPane.showMessageDialog(createDoc, "This ID already exists,Enter a unique ID");
+                    return;
+               }
+               
+               //Mobile Number Validation
+               if(mob.getText().isEmpty()) 
+               {
+                    JOptionPane.showMessageDialog(createDoc, "Mobile number is required");
+                    return;
+                }else 
+               {
+                    String nameRegex = "(0/91)?[7-9][0-9]{9}";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(mob.getText());
+
+                    if(!nameMatcher.matches())
+                    {
+                        JOptionPane.showMessageDialog(createDoc, "Please enter valid mobile number");
+                        return;
+                    }
+               } 
+               
+             //Password Validation
+               if(Tp.getText().isEmpty()) 
+               {
+                    JOptionPane.showMessageDialog(createDoc, "Password is required");
+                    return;
+                }               
+             
         id = Integer.parseInt(did.getText());
         fName = fn.getText();
         lName = ln.getText();

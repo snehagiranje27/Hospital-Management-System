@@ -255,11 +255,11 @@ public class LoginMainFrame extends javax.swing.JFrame {
         
         
         if( un.equals("")){
-            JOptionPane.showMessageDialog(this, "User Name is not enter. Please Add User name and try again");
+            JOptionPane.showMessageDialog(this, "User Name is not entered. Please Add User name and try again");
         }
         else
         if( pass.equals("")){
-            JOptionPane.showMessageDialog(this, "Password is not enter. Please enter password and try again");
+            JOptionPane.showMessageDialog(this, "Password is not entered. Please enter password and try again");
         }
         else
         if( urole == 0 ){
@@ -268,7 +268,7 @@ public class LoginMainFrame extends javax.swing.JFrame {
         else{
             
             if(urole == 1){
-                if( un.equals("SA") && pass.equals("1")){
+                if( un.equals("SysAdmin") && pass.equals("sneha@123")){
                     SystemAdminUI sa = new SystemAdminUI(this.dDir,this.pDir,this.hDir,this.cDir);
                     LoginDesk.add(sa);
                     sa.setVisible(true);
@@ -279,7 +279,7 @@ public class LoginMainFrame extends javax.swing.JFrame {
             }
             else
             if(urole == 2){
-                if(un.equals("HA") && pass.equals("1")){
+                if(un.equals("HosAdmin") && pass.equals("sneha@123")){
                     HospitalAdminUI had = new HospitalAdminUI(this.patDir);
                     LoginDesk.add(had);
                     had.setVisible(true);
@@ -290,7 +290,7 @@ public class LoginMainFrame extends javax.swing.JFrame {
             }
             else
             if(urole == 3){
-                if(un.equals("CA") && pass.equals("1")){
+                if(un.equals("ComAdmin") && pass.equals("sneha@123")){
                     CommunityCreateUI had = new CommunityCreateUI(this.cDir);
                     LoginDesk.add(had);
                     had.setVisible(true);
