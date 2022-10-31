@@ -411,17 +411,17 @@ public class AppDetails extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(DeleteApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AddVitals, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PatHistory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
+                    .addComponent(PatHistory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addComponent(AddVitals)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(DeleteApp, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addComponent(PatHistory)
                 .addGap(29, 29, 29))
         );
@@ -519,13 +519,49 @@ public class AppDetails extends javax.swing.JPanel {
                     return;
                 }else 
                {
-                    String nameRegex = "^\b(29[0-9]|2[0-9][0-9]|[01]?[0-9][0-9]?)\\/(29[0-9]|2[0-9][0-9]|[01]?[0-9][0-9]?)$";
+                    String nameRegex = "^[1-9]\\d*$";
                     Pattern namePattern = Pattern.compile(nameRegex);
                     Matcher nameMatcher = namePattern.matcher(Tbp.getText());
 
                     if(!nameMatcher.matches())
                     {
                         JOptionPane.showMessageDialog(AddVitals, "Please enter valid BP");
+                        return;
+                    }
+               }
+               
+               //Temperature Validation
+               if(Ttem.getText().isEmpty()) 
+               {
+                    JOptionPane.showMessageDialog(AddVitals, "Temperature is required");
+                    return;
+                }else 
+               {
+                    String nameRegex = "^([0-9]*)(.[[0-9]+]?)?$";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(Ttem.getText());
+
+                    if(!nameMatcher.matches())
+                    {
+                        JOptionPane.showMessageDialog(AddVitals, "Please enter valid temperature");
+                        return;
+                    }
+               }
+               
+               //HeartRate Validation
+               if(Thr.getText().isEmpty()) 
+               {
+                    JOptionPane.showMessageDialog(AddVitals, "HeartRate is required");
+                    return;
+                }else 
+               {
+                    String nameRegex = "^[1-9]\\d*$";
+                    Pattern namePattern = Pattern.compile(nameRegex);
+                    Matcher nameMatcher = namePattern.matcher(Thr.getText());
+
+                    if(!nameMatcher.matches())
+                    {
+                        JOptionPane.showMessageDialog(AddVitals, "Please enter valid heart rate");
                         return;
                     }
                }

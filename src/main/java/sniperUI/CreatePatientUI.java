@@ -534,6 +534,7 @@ public class CreatePatientUI extends javax.swing.JPanel {
             clear();
             this.pDir.addPerson(id, p);
         }
+        JOptionPane.showMessageDialog(this, "Appointment Booked !!");
         }catch(Exception e){
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Something went wrong. Please Try Agian!!");

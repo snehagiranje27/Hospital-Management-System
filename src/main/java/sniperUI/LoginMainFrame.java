@@ -109,17 +109,20 @@ public class LoginMainFrame extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Hospital Management System");
 
         Cur.setBackground(new java.awt.Color(204, 204, 204));
         Cur.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        Cur.setForeground(new java.awt.Color(102, 255, 255));
+        Cur.setForeground(new java.awt.Color(255, 255, 255));
         Cur.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "System Admin", "Hospital Admin", "Community Admin", "Doctor", "Patient" }));
 
         jLabel3.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("User Name");
 
         jLabel4.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
 
         Tun.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
@@ -127,9 +130,11 @@ public class LoginMainFrame extends javax.swing.JFrame {
         Tp.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("User Role");
 
         jLabel7.setFont(new java.awt.Font("Cambria", 3, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Login");
 
         NewPat.setFont(new java.awt.Font("Cambria", 3, 16)); // NOI18N
