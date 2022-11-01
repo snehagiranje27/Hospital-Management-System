@@ -486,7 +486,7 @@ public class DoctorUI extends javax.swing.JPanel {
                         return;
                     }
                } 
-               if(this.dDir.ifIdExists(id))
+               if(this.dDir.ifIdExists(Integer.parseInt(did.getText())))
                {
                     JOptionPane.showMessageDialog(createDoc, "This ID already exists,Enter a unique ID");
                     return;
